@@ -15,5 +15,5 @@
 //     return view('welcome');
 // });
 
-
+Auth::routes();
 Route::get('/', 'TweetController@index');
