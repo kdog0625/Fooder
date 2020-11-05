@@ -17,7 +17,7 @@ class TweetController extends Controller
             'created_at' => now(),
             'user' => (object) [
                 'id' => 1,
-                'userid'=>'@manapon',
+                'usernoid' => '@manapon1',
                 'name' => 'ユーザー名1',
             ],
         ],
