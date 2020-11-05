@@ -10,6 +10,7 @@
       <div class="card">
         <div class="card-header reg-hed text-center">{{ __('新規登録') }}</div>
 
+        @include('error_card_list')
 
           <div class="card-text">
             <form method="POST" action="{{ route('register') }}">
