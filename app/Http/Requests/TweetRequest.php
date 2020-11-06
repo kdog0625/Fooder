@@ -11,6 +11,7 @@ class TweetRequest extends FormRequest
      *
      * @return bool
      */
+    //認証の可否を判断
     public function authorize()
     {
         return false;
@@ -21,10 +22,22 @@ class TweetRequest extends FormRequest
      *
      * @return array
      */
+    //バリデーションのルールを定義
     public function rules()
     {
         return [
             //
+            'title' => 'required|max:50',
+            'content' => 'required|max:500',
+        ];
+    }
+
+    //バリデーションエラーメッセージに表示される項目名をカスタマイズ
+    public function attributes()
+    {
+        return [
+            'title' => 'タイトル',
+            'content' => '本文',
         ];
     }
 }
