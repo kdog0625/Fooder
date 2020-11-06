@@ -15,4 +15,9 @@ class TweetController extends Controller
 
     return view('tweets.index', ['tweets' => $tweets]);
     }
+
+    public function create()
+    {
+        return view('tweets.create');    
+    }
 }
