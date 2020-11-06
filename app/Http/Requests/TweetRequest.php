@@ -14,7 +14,7 @@ class TweetRequest extends FormRequest
     //認証の可否を判断
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
