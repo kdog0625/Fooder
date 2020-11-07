@@ -13,6 +13,7 @@
             @include('error_card_list')
             <div class="card-text">
               <form method="POST" action="{{ route('tweets.update', ['tweet' => $tweet]) }}">
+                @method('PATCH')
                 @include('tweets.form')
                 <button type="submit" class="btn blue-gradient btn-block">更新する</button>
               </form>
