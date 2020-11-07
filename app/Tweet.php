@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Tweet extends Model
 {
+    //不正なリクエストによってtweetsテーブルが予期せぬ内容に更新されることを防ぐ
+    protected $fillable = [
+        'title',
+        'content',
+        'address'
+    ];
     //もしuserメソッドがBelongsToクラスではなく、整数や文字列などの別の型を返そうとした場合、その時点でTypeErrorという例外が発生して処理が終了
     public function user(): BelongsTo
     {

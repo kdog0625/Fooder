@@ -8,21 +8,15 @@
   <img src="images/image01.jpg" class="img-responsive" style="width: 100%; background-size:cover">
 </div>
 <div class="container" style="margin-top:50px;">
-  <div class="card mt-5">
-    <div class="card-header">
-    タイトル
+  @foreach($tweets as $tweet) 
+    <div class="card mt-5">
+      <div class="card-header">
+      {{ $tweet->user->name }}
+      </div>
+      <div class="card-body">
+      {{ $tweet->content}}
+      </div>
     </div>
-    <div class="card-body">
-    ホームページ作成・Web集客を一通り習得したい方向けです
-    </div>
-  </div>
-  <div class="card mt-5">
-    <div class="card-header">
-    タイトル
-    </div>
-    <div class="card-body">
-    ホームページ作成・Web集客を一通り習得したい方向けです
-    </div>
-  </div>
+  @endforeach
 </div>
 @endsection
