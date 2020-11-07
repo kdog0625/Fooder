@@ -42,4 +42,10 @@ class TweetController extends Controller
         $tweet->fill($request->all())->save();
         return redirect()->route('tweets.index');
     }
+
+    public function destroy(Tweet $tweet)
+    {
+        $article->delete();
+        return redirect()->route('tweets.index');
+    }
 }
