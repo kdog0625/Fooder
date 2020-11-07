@@ -12,6 +12,7 @@ class Tweet extends Model
     protected $fillable = [
         'title',
         'content',
+        'address'
     ];
     //もしuserメソッドがBelongsToクラスではなく、整数や文字列などの別の型を返そうとした場合、その時点でTypeErrorという例外が発生して処理が終了
     public function user(): BelongsTo

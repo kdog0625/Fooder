@@ -17,7 +17,7 @@ class CreateTweetsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('content');
-            $table->string('image');
+            // $table->string('image');
             $table->string('address');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
