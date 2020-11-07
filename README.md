@@ -1,13 +1,3 @@
 # Fooder DB設計
 
-
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
-
-
-### Association
-- has_many :twees
+![image]https://user-images.githubusercontent.com/60535810/98443470-c919a980-214e-11eb-8666-c85dc07e8e68.png
