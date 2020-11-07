@@ -29,6 +29,17 @@ class TweetController extends Controller
         $tweet->fill($request->all()); 
         $tweet->user_id = $request->user()->id;
         $tweet->save();
-        return redirect('/');
+        return redirect('tweets.index');
+    }
+
+    public function edit(Tweet $tweet)
+    {
+        return view('tweets.edit', ['tweet' => $tweet]); 
+    }
+
+    public function update(TweetRequest $request, Tweet $tweet)
+    {
+        $tweet->fill($request->all())->save();
+        return redirect()->route('tweets.index');
     }
 }

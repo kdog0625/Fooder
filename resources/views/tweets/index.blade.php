@@ -13,10 +13,35 @@
       <div class="card-header">
       {{ $tweet->user->name }}
       </div>
+      @if( Auth::id() === $tweet->user_id )
+          <!-- dropdown -->
+          <div class="ml-auto card-text">
+            <div class="dropdown">
+              <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-link text-muted m-0 p-2">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{{ route('tweets.edit', ['tweet' => $tweet]) }}">
+                  <i class="fas fa-pen mr-1"></i>記事を更新する
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $tweet->id }}">
+                  <i class="fas fa-trash-alt mr-1"></i>記事を削除する
+                </a>
+              </div>
+            </div>
+          </div>
+      @endif  
       <div class="card-body">
       {{ $tweet->content}}
       </div>
+      <div class="font-weight-lighter text-right">
+      {{ $tweet->created_at->format('Y/m/d H:i') }}
+      </div>
     </div>
   @endforeach
+      
 </div>
 @endsection

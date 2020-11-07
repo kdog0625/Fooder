@@ -16,5 +16,5 @@
 // });
 
 Auth::routes();
-Route::get('/', 'TweetController@index');
+Route::get('/', 'TweetController@index')->name('tweets.index');
 Route::resource('/tweets', 'TweetController')->except(['index'])->middleware('auth');
