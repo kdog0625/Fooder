@@ -29,7 +29,7 @@ class TweetController extends Controller
         $tweet->fill($request->all()); 
         $tweet->user_id = $request->user()->id;
         $tweet->save();
-        return redirect('tweets.index');
+        return redirect('/');
     }
 
     public function edit(Tweet $tweet)
@@ -48,4 +48,9 @@ class TweetController extends Controller
         $tweet->delete();
         return redirect()->route('tweets.index');
     }
+
+    public function show(Tweet $tweet)
+    {
+        return view('tweets.show', ['tweet' => $tweet]);
+    }    
 }
