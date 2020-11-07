@@ -31,4 +31,9 @@ class TweetController extends Controller
         $tweet->save();
         return redirect('/');
     }
+
+    public function edit(Tweet $tweet)
+    {
+        return view('tweets.edit', ['tweet' => $tweet]); 
+    }
 }
