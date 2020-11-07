@@ -10,6 +10,12 @@ use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Tweet::class, 'tweet');
+    }
+
     public function index()
     {
     // 
