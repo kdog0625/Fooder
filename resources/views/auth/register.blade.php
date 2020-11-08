@@ -4,11 +4,12 @@
 
 @section('content')
 @include('nav')
-<div class="container" style="margin-top:86px;">
+<div class="container" style="margin-top:140px;">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header reg-hed text-center">{{ __('新規登録') }}</div>
+    <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
+      <div class="card mt-3">
+        <div class="card-body text-center">
+          <div class="card-header reg-hed text-center">{{ __('新規登録') }}</div>
 
         @include('error_card_list')
 
@@ -38,6 +39,7 @@
                 </div>
           </div>
         </div>
+      </div>
       </div>
     </div> 
   </div>
