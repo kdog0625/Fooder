@@ -1,9 +1,9 @@
-<div class="card mt-5">
-      <div class="card-header">
+<div class="card p-3 mt-5">
+      <div class="card-header d-flex align-items-center">
+        <div class="card-text lead">
       {{ $tweet->user->name }}
-      </div>
+        </div>
       @if( Auth::id() === $tweet->user_id )
-          <!-- dropdown -->
           <div class="ml-auto card-text">
             <div class="dropdown">
               <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,11 +48,30 @@
               </div>
             </div>
           </div>
+      @else
+         <div class="ml-auto card-text">
+            <div class="dropdown">
+              <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-link text-muted m-0 p-2">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">     
+                <a class="dropdown-item" href="{{ route('tweets.show', ['tweet' => $tweet]) }}">
+                  <i class="fas fa-pen mr-1"></i>投稿の詳細
+                </a>
+              </div>
+            </div>
+          </div>
       @endif  
-      <div class="card-body">
+      </div>
+      <div class="card-body border-bottom">
       {{ $tweet->content}}
       </div>
-      <div class="font-weight-lighter text-right">
+      <div class="card-body">
+      {{ $tweet->address}}
+      </div>
+      <div class="font-weight-lighter text-right mr-2">
       {{ $tweet->created_at->format('Y/m/d H:i') }}
       </div>
     </div>
