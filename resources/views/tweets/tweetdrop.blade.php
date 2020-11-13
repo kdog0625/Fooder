@@ -1,4 +1,4 @@
-<div class="card mt-5">
+<div class="card p-3 mt-5">
       <div class="card-header d-flex align-items-center">
         <div class="card-text lead">
       {{ $tweet->user->name }}
