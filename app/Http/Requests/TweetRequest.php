@@ -29,6 +29,7 @@ class TweetRequest extends FormRequest
             //
             'title' => 'required|max:50',
             'content' => 'required|max:500',
+            'tweet_img' =>'image|file',
         ];
     }
 
@@ -38,6 +39,7 @@ class TweetRequest extends FormRequest
         return [
             'title' => 'タイトル',
             'content' => '本文',
+            'tweet_img' =>'画像',
         ];
     }
 }
