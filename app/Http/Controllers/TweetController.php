@@ -8,6 +8,8 @@ use App\Tweet;
 
 use App\Http\Requests\TweetRequest;
 
+use Illuminate\Support\Facades\Storage;
+
 class TweetController extends Controller
 {
 
