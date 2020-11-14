@@ -8,7 +8,7 @@
   <textarea name="content" required class="form-control" rows="16" placeholder="本文">{{ $tweet->content ??   old('content') }}</textarea>
 </div>
 <div class="form-group">
-<input type="file" name="tweet_img"  type="file" value="{{ old('tweet_img')" >
+<input type="file" name="tweet_img"  type="file" value="{{ old('tweet_img')}}" >
 </div>
 <div class="md-form">
   <label>住所</label>
