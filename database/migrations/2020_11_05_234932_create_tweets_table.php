@@ -19,6 +19,7 @@ class CreateTweetsTable extends Migration
             $table->text('content');
             // $table->string('image');
             $table->string('address');
+            $table->string('tweet_img');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

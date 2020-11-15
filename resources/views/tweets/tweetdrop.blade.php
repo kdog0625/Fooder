@@ -65,6 +65,9 @@
           </div>
       @endif  
       </div>
+      <div class="card-body">
+      <img  src="/uploads/{{$tweet->tweet_img}}"class="img-fluid" alt="Responsive image">
+      </div>
       <div class="card-body border-bottom">
       {{ $tweet->content}}
       </div>

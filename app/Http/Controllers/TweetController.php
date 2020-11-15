@@ -8,6 +8,8 @@ use App\Tweet;
 
 use App\Http\Requests\TweetRequest;
 
+use Illuminate\Support\Facades\Storage;
+
 class TweetController extends Controller
 {
 
@@ -32,8 +34,20 @@ class TweetController extends Controller
     //storeアクションメソッドは、第一引数が$request。引数$requestはTweetRequestクラスのインスタンスである、ということを宣言
     public function store(TweetRequest $request, Tweet $tweet)
     {
+        if ($file = $request->tweet_img) {
+            //getClientOriginalName()で拡張子を含め、アップロードしたファイルのファイル名を取得
+            //time() ---> タイムスタンプを取得する。
+            $fileName = time() . $file->getClientOriginalName();
+            //public_path() ---> publicディレクトリの完全パスを返します。ここでは、publicディレクトリ内にuploadsディレクトリを作成しています。
+            $target_path = public_path('uploads/');
+            //画像をpublic/uploads/に、$fileNameという名前で挿入しています。
+            $file->move($target_path, $fileName);
+        } else {
+            $fileName = "";
+        }
         $tweet->fill($request->all()); 
         $tweet->user_id = $request->user()->id;
+        $tweet->tweet_img = $fileName;
         $tweet->save();
         return redirect('/');
     }

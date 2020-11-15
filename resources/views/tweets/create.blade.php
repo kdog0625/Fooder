@@ -12,7 +12,7 @@
           <div class="card-body pt-0">
             @include('error_card_list')
             <div class="card-text">
-              <form method="POST" action="{{ route('tweets.store') }}">
+              <form method="POST" enctype="multipart/form-data" action="{{ route('tweets.store') }}">
                 @include('tweets.form')
                 <button type="submit" class="btn blue-gradient btn-block">投稿する</button>
               </form>
